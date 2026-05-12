@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>01two-pointers</module>
+        <module>02HashMapAndSet</module>
     </modules>
 
     <properties>
