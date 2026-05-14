@@ -2,38 +2,41 @@ package com.codeprep;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TwoSumTest {
 
     @Test
     void findsTwoIndicesThatSumToTarget() {
-        int[] nums = {2, 7, 11, 15};
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(2, 7, 11, 15));
         int target = 9;
 
-        int[] result = TwoSum.twoSum(nums, target);
+        ArrayList<Integer> result = TwoSum.pair_sum_unsorted(nums, target);
 
-        assertArrayEquals(new int[]{0, 1}, result);
+        assertEquals(new ArrayList<>(Arrays.asList(0, 1)), result);
     }
 
     @Test
     void findsTwoIndicesWithNegativeNumbers() {
-        int[] nums = {-3, 4, 3, 90};
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(-3, 4, 3, 90));
         int target = 0;
 
-        int[] result = TwoSum.twoSum(nums, target);
+        ArrayList<Integer> result = TwoSum.pair_sum_unsorted(nums, target);
 
-        assertArrayEquals(new int[]{0, 2}, result);
+        assertEquals(new ArrayList<>(Arrays.asList(0, 2)), result);
     }
 
     @Test
     void findsTwoIndicesWhenDuplicatesPresent() {
-        int[] nums = {3, 3};
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(3, 3));
         int target = 6;
 
-        int[] result = TwoSum.twoSum(nums, target);
+        ArrayList<Integer> result = TwoSum.pair_sum_unsorted(nums, target);
 
-        assertArrayEquals(new int[]{0, 1}, result);
+        assertEquals(new ArrayList<>(Arrays.asList(0, 1)), result);
     }
 }
 
